@@ -1,0 +1,57 @@
+# Dependencies
+node_modules
+
+# Testing
+coverage
+.nyc_output
+
+# Production builds
+.next
+out
+
+# Environment files
+.env*
+!.env.example
+
+# IDE
+.vscode
+.idea
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Git
+.git
+.gitignore
+
+# Logs
+*.log
+npm-debug.log*
+
+# Runtime data
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# Optional npm cache directory
+.npm
+
+# Optional REPL history
+.node_repl_history
+
+# Output of 'npm pack'
+*.tgz
+
+# Yarn Integrity file
+.yarn-integrity
+
+# Development files
+.env.local*
+setup_env.local
+SUPABASE_SETUP.md
+
+# Temporary files
+*.tmp
+*.temp
