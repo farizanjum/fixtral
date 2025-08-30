@@ -11,14 +11,14 @@ const nextConfig = {
       'i.imgur.com'
     ],
   },
-  experimental: {
-    outputFileTracingExcludes: [
-      "node_modules/.cache/**",
-      "node_modules/.bin/**",
-      ".next/cache/**",
-      ".git/**"
-    ]
-  }
+  // experimental: {
+  //   outputFileTracingExcludes: [
+  //     "node_modules/.cache/**",
+  //     "node_modules/.bin/**",
+  //     ".next/cache/**",
+  //     ".git/**"
+  //   ]
+  // }
 }
 
 module.exports = nextConfig
