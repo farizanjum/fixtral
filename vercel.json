@@ -9,14 +9,5 @@
     }
   },
   "regions": ["fra1"],
-  "env": {
-    "NEXT_PUBLIC_SUPABASE_URL": "@next_public_supabase_url",
-    "NEXT_PUBLIC_SUPABASE_ANON_KEY": "@next_public_supabase_anon_key",
-    "SUPABASE_SERVICE_ROLE_KEY": "@supabase_service_role_key",
-    "GOOGLE_GEMINI_API_KEY": "@google_gemini_api_key",
-    "REDDIT_CLIENT_ID": "@reddit_client_id",
-    "REDDIT_CLIENT_SECRET": "@reddit_client_secret",
-    "ADMIN_EMAIL": "@admin_email",
-    "ADMIN_UID": "@admin_uid"
-  }
+
 }
