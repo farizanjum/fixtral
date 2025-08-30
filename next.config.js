@@ -12,14 +12,12 @@ const nextConfig = {
     ],
   },
   experimental: {
-    outputFileTracingExcludes: {
-      "*": [
-        "**/node_modules/.cache/**",
-        "**/node_modules/.bin/**",
-        "**/.next/cache/**",
-        "**/.git/**"
-      ]
-    }
+    outputFileTracingExcludes: [
+      "node_modules/.cache/**",
+      "node_modules/.bin/**",
+      ".next/cache/**",
+      ".git/**"
+    ]
   }
 }
 
