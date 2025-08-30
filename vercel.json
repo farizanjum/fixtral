@@ -8,6 +8,5 @@
       "maxDuration": 30
     }
   },
-  "regions": ["fra1"],
-
+  "regions": ["fra1"]
 }
