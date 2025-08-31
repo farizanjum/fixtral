@@ -54,15 +54,15 @@ export function QueueView() {
     setLoading(true)
     try {
       const response = await fetch('/api/reddit/posts')
-      const data = await response.json()
+        const data = await response.json()
       if (data.ok) {
         setPosts(data.posts || [])
       }
     } catch (error) {
       console.error('Error fetching posts:', error)
     }
-    setLoading(false)
-  }
+      setLoading(false)
+    }
 
   // Analyze post with Google Gemini 2.5 Flash
   const analyzePost = async (postId: string) => {
@@ -159,17 +159,19 @@ export function QueueView() {
   return (
     <div className="max-w-7xl mx-auto space-y-6 sm:space-y-8 mobile-container">
       {/* Header Section */}
-      <div className="text-center py-8 sm:py-16 px-4 bg-gradient-to-b from-transparent via-muted/10 to-transparent">
-        <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-4 mb-6 sm:mb-8">
-          <div className="relative">
-            <Wand2 className="h-8 w-8 sm:h-12 sm:w-12 text-primary animate-pulse" />
-            <div className="absolute -top-1 -right-1 w-3 h-3 sm:w-4 sm:h-4 bg-yellow-500 rounded-full animate-ping opacity-75"></div>
+      <div className="text-center py-8 sm:py-16 px-4 bg-gradient-to-b from-transparent via-muted/10 to-transparent mobile-container">
+        <div className="flex flex-col items-center justify-center space-y-4 mb-6 sm:mb-8">
+          <div className="flex items-center justify-center space-x-3 sm:space-x-4">
+            <div className="relative flex-shrink-0">
+              <Wand2 className="h-8 w-8 sm:h-12 sm:w-12 text-primary animate-pulse" />
+              <div className="absolute -top-1 -right-1 w-3 h-3 sm:w-4 sm:h-4 bg-yellow-500 rounded-full animate-ping opacity-75"></div>
+            </div>
+            <h1 className="text-3xl sm:text-5xl font-bold bg-gradient-to-r from-primary via-primary to-primary/70 bg-clip-text text-transparent mobile-responsive-large">
+              Fixtral
+            </h1>
           </div>
-          <h1 className="text-3xl sm:text-5xl font-bold bg-gradient-to-r from-primary via-primary to-primary/70 bg-clip-text text-transparent mobile-responsive-large">
-            Fixtral
-          </h1>
         </div>
-        <p className="text-lg sm:text-xl text-muted-foreground max-w-3xl mx-auto mb-8 sm:mb-12 leading-relaxed mobile-responsive-text">
+        <p className="text-lg sm:text-xl text-muted-foreground max-w-3xl mx-auto mb-8 sm:mb-12 leading-relaxed mobile-responsive-text px-4 sm:px-0">
           AI-Powered Reddit Photoshop Assistant - Automated image editing with Google Gemini AI
         </p>
 
@@ -280,7 +282,7 @@ export function QueueView() {
                       <p className="text-sm leading-relaxed text-card-foreground">{analysisResult.analysis}</p>
                     </div>
                   </div>
-                </div>
+        </div>
 
                 <div className="flex flex-col sm:flex-row gap-3">
                   <Button
@@ -297,8 +299,8 @@ export function QueueView() {
                     className="flex-1 border-muted-foreground/20 hover:bg-muted/50 font-semibold transition-all duration-200 mobile-button"
                   >
                     Cancel
-                  </Button>
-                </div>
+        </Button>
+      </div>
 
                 <div className="bg-gradient-to-r from-primary/5 to-primary/10 border border-primary/20 p-3 sm:p-4 rounded-xl">
                   <div className="flex items-start space-x-3">
@@ -319,34 +321,39 @@ export function QueueView() {
 
       {/* Posts Grid */}
       <div className="space-y-6">
-        <div className="flex items-center justify-between">
-          <div>
-            <h2 className="text-2xl font-bold">Reddit Posts Queue</h2>
-            <p className="text-muted-foreground">
+        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 sm:gap-6">
+          <div className="space-y-2">
+            <h2 className="text-2xl font-bold mobile-responsive-heading">Reddit Posts Queue</h2>
+            <p className="text-muted-foreground mobile-responsive-text">
               Latest Photoshop requests from r/PhotoshopRequest
             </p>
           </div>
-          <Button onClick={fetchPosts} disabled={loading}>
-            {loading ? (
-              <>
-                <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-                Loading...
-              </>
-            ) : (
-              'Refresh Posts'
-            )}
-          </Button>
+          <div className="flex-shrink-0">
+            <Button onClick={fetchPosts} disabled={loading} className="w-full sm:w-auto mobile-button">
+              {loading ? (
+                <>
+                  <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                  Loading...
+                </>
+              ) : (
+                <>
+                  <Loader2 className="mr-2 h-4 w-4" />
+                  Refresh Posts
+                </>
+              )}
+            </Button>
+          </div>
         </div>
 
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {posts.map((post) => (
+        {posts.map((post) => (
             <Card key={post.id} className="overflow-hidden hover:shadow-lg transition-shadow">
-              <CardHeader className="pb-3">
-                <div className="flex items-start justify-between">
+            <CardHeader className="pb-3">
+              <div className="flex items-start justify-between">
                   <div className="space-y-2 flex-1">
-                    <CardTitle className="text-lg leading-tight line-clamp-2">
-                      {post.title}
-                    </CardTitle>
+                  <CardTitle className="text-lg leading-tight line-clamp-2">
+                    {post.title}
+                  </CardTitle>
                     <CardDescription className="flex items-center space-x-4 text-xs">
                       <span className="flex items-center">
                         <User className="h-3 w-3 mr-1" />
@@ -367,12 +374,12 @@ export function QueueView() {
                           View on Reddit
                         </a>
                       </span>
-                    </CardDescription>
-                  </div>
+                  </CardDescription>
                 </div>
-              </CardHeader>
+              </div>
+            </CardHeader>
 
-              <CardContent className="space-y-4">
+            <CardContent className="space-y-4">
                 {post.imageUrl && (
                   <div
                     className="relative aspect-video overflow-hidden rounded-lg border cursor-pointer hover:opacity-90 transition-opacity"
@@ -383,20 +390,20 @@ export function QueueView() {
                       post.postUrl
                     )}
                   >
-                    <Image
+                  <Image
                       src={post.imageUrl}
                       alt="Post image"
-                      fill
-                      className="object-cover"
-                    />
-                  </div>
-                )}
+                    fill
+                    className="object-cover"
+                  />
+                </div>
+              )}
 
                 {post.description && (
-                  <p className="text-sm text-muted-foreground line-clamp-3">
+                <p className="text-sm text-muted-foreground line-clamp-3">
                     {post.description}
-                  </p>
-                )}
+                </p>
+              )}
 
                 <div className="flex items-center justify-between">
                   <div className="flex items-center space-x-2 text-xs text-muted-foreground">
@@ -404,7 +411,7 @@ export function QueueView() {
                     <span>💬 {post.num_comments}</span>
                   </div>
 
-                  <Button
+              <Button
                     onClick={() => analyzePost(post.id)}
                     disabled={analyzingPostId === post.id}
                     size="sm"
@@ -421,22 +428,22 @@ export function QueueView() {
                         Analyze & Edit
                       </>
                     )}
-                  </Button>
+              </Button>
                 </div>
-              </CardContent>
-            </Card>
-          ))}
-        </div>
+            </CardContent>
+          </Card>
+        ))}
+      </div>
 
-        {posts.length === 0 && !loading && (
+      {posts.length === 0 && !loading && (
           <div className="text-center py-16">
             <ImageIcon className="mx-auto h-16 w-16 text-muted-foreground" />
             <h3 className="mt-4 text-xl font-semibold">No posts found</h3>
             <p className="text-muted-foreground mt-2">
               Check back later for new Photoshop requests from Reddit
-            </p>
-          </div>
-        )}
+          </p>
+        </div>
+      )}
       </div>
     </div>
   )

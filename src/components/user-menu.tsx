@@ -5,7 +5,7 @@ import { Button } from '@/components/ui/button'
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuLabel, DropdownMenuSeparator, DropdownMenuTrigger } from '@/components/ui/dropdown-menu'
 import { useAuth } from '@/lib/auth-context'
-import { User, LogOut, Settings, History, Zap } from 'lucide-react'
+import { User, LogOut, History, Zap } from 'lucide-react'
 
 interface UserMenuProps {
   onShowHistory?: () => void
@@ -93,10 +93,6 @@ export const UserMenu: React.FC<UserMenuProps> = ({ onShowHistory }) => {
         <DropdownMenuItem onClick={onShowHistory}>
           <History className="mr-2 h-4 w-4" />
           <span>Edit History</span>
-        </DropdownMenuItem>
-        <DropdownMenuItem>
-          <Settings className="mr-2 h-4 w-4" />
-          <span>Settings</span>
         </DropdownMenuItem>
         <DropdownMenuSeparator />
         <DropdownMenuItem onClick={handleSignOut} disabled={isSigningOut}>

@@ -563,7 +563,19 @@ export function EditorView() {
           setCurrentItem(null)
           setEditResult(null)
           setEditPrompt('')
-          console.log('✅ UI state updated successfully')
+
+          // Clear the pending item from localStorage to remove notification
+          localStorage.removeItem('pendingEditorItem')
+
+          // Dispatch storage event to notify other tabs/windows
+          window.dispatchEvent(new StorageEvent('storage', {
+            key: 'pendingEditorItem',
+            newValue: null,
+            oldValue: null,
+            storageArea: localStorage
+          }))
+
+          console.log('✅ UI state updated successfully and pending item cleared')
         } catch (uiError) {
           console.warn('⚠️ UI state update failed, but data saved:', uiError)
         }
@@ -801,30 +813,32 @@ export function EditorView() {
 
       {/* Edit Result Display */}
       {editResult && (
-        <Card className="border-primary/20 bg-gradient-to-r from-primary/5 via-primary/10 to-primary/5 shadow-xl">
+        <Card className="border-primary/20 bg-gradient-to-r from-primary/5 via-primary/10 to-primary/5 shadow-xl mobile-card">
           <CardHeader className="pb-4">
-            <div className="flex items-center justify-between">
-              <div className="flex items-center space-x-3">
-                <div className="p-2 bg-green-500 rounded-full">
-                  <CheckCircle className="h-6 w-6 text-white" />
+            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+              <div className="flex items-center space-x-3 flex-1">
+                <div className="p-2 bg-green-500 rounded-full flex-shrink-0 touch-target">
+                  <CheckCircle className="h-5 w-5 sm:h-6 sm:w-6 text-white" />
                 </div>
-                <div className="flex-1">
-                  <CardTitle className="text-xl font-bold">AI Image Generated Successfully!</CardTitle>
-                  <CardDescription className="text-muted-foreground">
+                <div className="flex-1 min-w-0">
+                  <CardTitle className="text-lg sm:text-xl font-bold mobile-responsive-heading">AI Image Generated Successfully!</CardTitle>
+                  <CardDescription className="text-muted-foreground text-sm sm:text-base">
                     Your edited image is ready for download
                   </CardDescription>
                 </div>
-                <Badge variant="secondary" className="bg-primary/10 text-primary border-primary/20 font-semibold">
+                <Badge variant="secondary" className="bg-primary/10 text-primary border-primary/20 font-semibold text-xs sm:text-sm flex-shrink-0">
                   Step 3: Image Generated
                 </Badge>
               </div>
-              <Button
-                onClick={() => saveToHistory(editResult)}
-                className="bg-gradient-to-r from-green-500 to-emerald-500 hover:from-green-600 hover:to-emerald-600 text-white font-semibold shadow-lg hover:shadow-xl transition-all duration-200"
-              >
-                <Save className="mr-2 h-4 w-4" />
-                Save to History
-              </Button>
+              <div className="flex-shrink-0">
+                <Button
+                  onClick={() => saveToHistory(editResult)}
+                  className="bg-gradient-to-r from-green-500 to-emerald-500 hover:from-green-600 hover:to-emerald-600 text-white font-semibold shadow-lg hover:shadow-xl transition-all duration-200 mobile-button w-full sm:w-auto"
+                >
+                  <Save className="mr-2 h-4 w-4" />
+                  Save to History
+                </Button>
+              </div>
             </div>
           </CardHeader>
           <CardContent className="space-y-6">

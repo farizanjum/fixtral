@@ -71,6 +71,10 @@ export default function Dashboard() {
       if (confirmChange) {
         setActiveTab('editor')
         return
+      } else {
+        // Clear pending item if user chooses not to go to editor
+        localStorage.removeItem('pendingEditorItem')
+        setPendingEditorItems(0)
       }
     }
     setActiveTab(tab)
