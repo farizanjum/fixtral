@@ -58,14 +58,14 @@ export default function LandingPage() {
       </header>
 
       {/* Hero Section */}
-      <section className="relative py-16 sm:py-24 pb-20 sm:pb-32 px-4 overflow-hidden mobile-safe-top">
+      <section className="relative py-16 sm:py-24 pb-20 sm:pb-32 px-4 overflow-visible mobile-safe-top">
         <div className="absolute inset-0 bg-gradient-to-r from-primary/5 via-transparent to-primary/5"></div>
         <div className="container mx-auto text-center relative z-10 mobile-container">
           <div className={`transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
             <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-4 mb-6 sm:mb-8">
-              <div className="relative">
-                <Wand2 className="h-12 w-12 sm:h-16 sm:w-16 text-primary animate-pulse" />
-                <Sparkles className="h-4 w-4 sm:h-6 sm:w-6 text-yellow-500 absolute -top-2 -right-2 animate-bounce" />
+              <div className="relative z-20">
+                <Wand2 className="h-12 w-12 sm:h-16 sm:w-16 text-primary animate-pulse relative z-10" />
+                <Sparkles className="h-4 w-4 sm:h-6 sm:w-6 text-yellow-500 absolute -top-2 -right-2 animate-bounce z-30" />
               </div>
               <h1 className="text-4xl sm:text-6xl md:text-7xl font-bold bg-gradient-to-r from-primary via-primary to-primary/70 bg-clip-text text-transparent mobile-large-heading">
                 Fixtral
