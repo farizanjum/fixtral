@@ -177,26 +177,30 @@ export function QueueView() {
 
         {/* Workflow Steps */}
         <div className="flex justify-center px-4">
-          <div className="flex flex-col sm:flex-row items-center space-y-4 sm:space-y-0 sm:space-x-4 sm:space-x-6 bg-gradient-to-r from-muted/30 via-muted/50 to-muted/30 p-4 sm:p-6 rounded-2xl border shadow-lg backdrop-blur-sm w-full max-w-md sm:max-w-none">
-            <div className="flex items-center space-x-3">
-              <div className="w-8 h-8 sm:w-10 sm:h-10 bg-gradient-to-r from-blue-500 to-blue-600 text-white rounded-full flex items-center justify-center text-xs sm:text-sm font-bold shadow-lg touch-target">
+          <div className="flex flex-row items-center justify-center space-x-2 sm:space-x-4 sm:space-x-6 bg-gradient-to-r from-muted/30 via-muted/50 to-muted/30 p-3 sm:p-6 rounded-2xl border shadow-lg backdrop-blur-sm w-full max-w-md sm:max-w-none mx-auto">
+            <div className="flex items-center space-x-2 sm:space-x-3">
+              <div className="w-7 h-7 sm:w-10 sm:h-10 bg-gradient-to-r from-blue-500 to-blue-600 text-white rounded-full flex items-center justify-center text-xs sm:text-sm font-bold shadow-lg touch-target">
                 1
               </div>
-              <span className="text-sm font-semibold">Analyze</span>
+              <span className="text-xs sm:text-sm font-semibold">Analyze</span>
             </div>
-            <div className="hidden sm:block w-8 sm:w-12 h-0.5 bg-gradient-to-r from-blue-500 to-orange-500"></div>
-            <div className="flex items-center space-x-3">
-              <div className="w-8 h-8 sm:w-10 sm:h-10 bg-gradient-to-r from-orange-500 to-orange-600 text-white rounded-full flex items-center justify-center text-xs sm:text-sm font-bold shadow-lg touch-target">
+            <div className="flex items-center justify-center">
+              <span className="text-xs sm:text-sm font-bold text-muted-foreground px-1 sm:px-2">→</span>
+            </div>
+            <div className="flex items-center space-x-2 sm:space-x-3">
+              <div className="w-7 h-7 sm:w-10 sm:h-10 bg-gradient-to-r from-orange-500 to-orange-600 text-white rounded-full flex items-center justify-center text-xs sm:text-sm font-bold shadow-lg touch-target">
                 2
               </div>
-              <span className="text-sm font-semibold">Edit</span>
+              <span className="text-xs sm:text-sm font-semibold">Edit</span>
             </div>
-            <div className="hidden sm:block w-8 sm:w-12 h-0.5 bg-gradient-to-r from-orange-500 to-green-500"></div>
-            <div className="flex items-center space-x-3">
-              <div className="w-8 h-8 sm:w-10 sm:h-10 bg-gradient-to-r from-green-500 to-green-600 text-white rounded-full flex items-center justify-center text-xs sm:text-sm font-bold shadow-lg touch-target">
+            <div className="flex items-center justify-center">
+              <span className="text-xs sm:text-sm font-bold text-muted-foreground px-1 sm:px-2">→</span>
+            </div>
+            <div className="flex items-center space-x-2 sm:space-x-3">
+              <div className="w-7 h-7 sm:w-10 sm:h-10 bg-gradient-to-r from-green-500 to-green-600 text-white rounded-full flex items-center justify-center text-xs sm:text-sm font-bold shadow-lg touch-target">
                 3
               </div>
-              <span className="text-sm font-semibold">Save</span>
+              <span className="text-xs sm:text-sm font-semibold">Save</span>
             </div>
           </div>
         </div>
