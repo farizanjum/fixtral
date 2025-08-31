@@ -1,0 +1,16 @@
+{
+    "name": "Fixtral - AI Photoshop Assistant",
+    "short_name": "Fixtral",
+    "description": "Automate image edits from Reddit's r/PhotoshopRequest using AI",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#000000",
+    "theme_color": "#ffffff",
+    "icons": [
+        {
+            "src": "/favicon.ico",
+            "sizes": "any",
+            "type": "image/x-icon"
+        }
+    ]
+}
