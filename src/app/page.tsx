@@ -59,18 +59,18 @@ export default function LandingPage() {
 
       {/* Hero Section */}
       <section className="relative py-16 sm:py-24 pb-20 sm:pb-32 px-4 overflow-hidden mobile-safe-top">
-        {/* Video Background */}
+        {/* Self-Hosted Video Background */}
         <div className="absolute inset-0 z-0">
-          <div style={{position: 'relative', width: '100%', height: '0px', paddingBottom: '56.250%'}}>
-            <iframe
-              allow="fullscreen;autoplay"
-              allowFullScreen
-              height="100%"
-              src="https://streamable.com/e/1a5fm6?autoplay=1&muted=1"
-              width="100%"
-              style={{border: 'none', width: '100%', height: '100%', position: 'absolute', left: '0px', top: '0px', overflow: 'hidden'}}
-            ></iframe>
-          </div>
+          <video
+            autoPlay
+            muted
+            loop
+            playsInline
+            className="w-full h-full object-cover"
+          >
+            <source src="/bg.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
           {/* Dark overlay for better text readability */}
           <div className="absolute inset-0 bg-black/40 z-10"></div>
         </div>
