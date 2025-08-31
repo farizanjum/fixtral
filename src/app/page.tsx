@@ -91,17 +91,16 @@ export default function LandingPage() {
                   </Button>
                 </Link>
               ) : (
-                <Link href="/app">
-                  <Button
-                    size="lg"
-                    className="bg-gradient-to-r from-orange-500 via-red-500 to-pink-500 hover:from-orange-600 hover:via-red-600 hover:to-pink-600 text-white font-bold px-6 sm:px-10 py-3 sm:py-4 shadow-2xl hover:shadow-orange-500/25 transition-all duration-300 transform hover:scale-105 mobile-button w-full sm:w-auto"
-                    style={{ animation: 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite' }}
-                  >
-                    <Zap className="mr-2 sm:mr-3 h-5 w-5" />
-                    <span className="text-sm sm:text-base">🚀 Try for FREE - 2 Generations Daily!</span>
-                    <ArrowRight className="ml-2 sm:ml-3 h-5 w-5" />
-                  </Button>
-                </Link>
+                <Button
+                  size="lg"
+                  onClick={() => setShowAuthModal(true)}
+                  className="bg-gradient-to-r from-orange-500 via-red-500 to-pink-500 hover:from-orange-600 hover:via-red-600 hover:to-pink-600 text-white font-bold px-6 sm:px-10 py-3 sm:py-4 shadow-2xl hover:shadow-orange-500/25 transition-all duration-300 transform hover:scale-105 mobile-button w-full sm:w-auto"
+                  style={{ animation: 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite' }}
+                >
+                  <Zap className="mr-2 sm:mr-3 h-5 w-5" />
+                  <span className="text-sm sm:text-base">🚀 Try for FREE - 2 Generations Daily!</span>
+                  <ArrowRight className="ml-2 sm:ml-3 h-5 w-5" />
+                </Button>
               )}
             </div>
           </div>
@@ -286,6 +285,10 @@ export default function LandingPage() {
       <AuthModal
         isOpen={showAuthModal}
         onClose={() => setShowAuthModal(false)}
+        onSuccess={() => {
+          // Redirect to app after successful authentication
+          window.location.href = '/app'
+        }}
       />
     </div>
   )

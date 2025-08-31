@@ -13,9 +13,10 @@ import { useTheme } from '@/lib/theme-context'
 interface AuthModalProps {
   isOpen: boolean
   onClose: () => void
+  onSuccess?: () => void
 }
 
-export const AuthModal: React.FC<AuthModalProps> = ({ isOpen, onClose }) => {
+export const AuthModal: React.FC<AuthModalProps> = ({ isOpen, onClose, onSuccess }) => {
   const { theme } = useTheme()
   const { signIn, signUp } = useAuth()
   const [loading, setLoading] = useState(false)
@@ -33,6 +34,7 @@ export const AuthModal: React.FC<AuthModalProps> = ({ isOpen, onClose }) => {
       alert(error.message)
     } else {
       onClose()
+      onSuccess?.()
     }
 
     setLoading(false)
@@ -55,6 +57,7 @@ export const AuthModal: React.FC<AuthModalProps> = ({ isOpen, onClose }) => {
     } else {
       alert('Check your email for the confirmation link!')
       onClose()
+      onSuccess?.()
     }
 
     setLoading(false)
@@ -65,10 +68,10 @@ export const AuthModal: React.FC<AuthModalProps> = ({ isOpen, onClose }) => {
       <DialogContent className={`sm:max-w-md ${theme === 'dark' ? 'bg-card border-muted' : ''}`}>
         <DialogHeader>
           <DialogTitle className="text-center text-2xl font-bold">
-            Welcome to Fixtral
+            🚀 Get Started with Fixtral
           </DialogTitle>
           <DialogDescription className="text-center">
-            Sign in to your account or create a new one
+            Sign up for FREE and get 2 AI image generations daily!
           </DialogDescription>
         </DialogHeader>
 
