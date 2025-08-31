@@ -58,8 +58,22 @@ export default function LandingPage() {
       </header>
 
       {/* Hero Section */}
-      <section className="relative py-16 sm:py-24 pb-20 sm:pb-32 px-4 overflow-visible mobile-safe-top">
-        <div className="absolute inset-0 bg-gradient-to-r from-primary/5 via-transparent to-primary/5 z-0"></div>
+      <section className="relative py-16 sm:py-24 pb-20 sm:pb-32 px-4 overflow-hidden mobile-safe-top">
+        {/* Video Background */}
+        <div className="absolute inset-0 z-0">
+          <div style={{position: 'relative', width: '100%', height: '0px', paddingBottom: '56.250%'}}>
+            <iframe
+              allow="fullscreen;autoplay"
+              allowFullScreen
+              height="100%"
+              src="https://streamable.com/e/1a5fm6?autoplay=1&muted=1"
+              width="100%"
+              style={{border: 'none', width: '100%', height: '100%', position: 'absolute', left: '0px', top: '0px', overflow: 'hidden'}}
+            ></iframe>
+          </div>
+          {/* Dark overlay for better text readability */}
+          <div className="absolute inset-0 bg-black/40 z-10"></div>
+        </div>
         <div className="container mx-auto text-center relative z-10 mobile-container">
           <div className={`transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
             <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-4 mb-6 sm:mb-8">
@@ -68,12 +82,12 @@ export default function LandingPage() {
                 <Wand2 className="h-12 w-12 sm:h-16 sm:w-16 text-primary animate-pulse relative z-[99]" />
                 <Sparkles className="h-4 w-4 sm:h-6 sm:w-6 text-yellow-500 absolute -top-2 -right-2 animate-bounce z-[999] pointer-events-none" />
               </div>
-              <h1 className="text-4xl sm:text-6xl md:text-7xl font-bold bg-gradient-to-r from-primary via-primary to-primary/70 bg-clip-text text-transparent mobile-large-heading">
+              <h1 className="text-4xl sm:text-6xl md:text-7xl font-bold bg-gradient-to-r from-primary via-primary to-primary/70 bg-clip-text text-transparent mobile-large-heading drop-shadow-[0_4px_8px_rgba(0,0,0,0.8)]">
                 Fixtral
               </h1>
             </div>
 
-            <p className="text-lg sm:text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto mb-8 sm:mb-12 leading-relaxed px-4 sm:px-0 mobile-responsive-text">
+            <p className="text-lg sm:text-xl md:text-2xl text-white max-w-3xl mx-auto mb-8 sm:mb-12 leading-relaxed px-4 sm:px-0 mobile-responsive-text drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">
               Revolutionize your image editing with AI-powered Photoshop assistance.
               Automate edits from Reddit's r/PhotoshopRequest using Google Gemini AI.
             </p>
@@ -107,8 +121,8 @@ export default function LandingPage() {
         </div>
 
         {/* Floating Elements */}
-        <div className="absolute top-20 left-4 sm:left-10 w-16 h-16 sm:w-20 sm:h-20 bg-primary/10 rounded-full blur-xl animate-pulse"></div>
-        <div className="absolute bottom-20 right-4 sm:right-10 w-24 h-24 sm:w-32 sm:h-32 bg-primary/5 rounded-full blur-2xl animate-pulse delay-1000"></div>
+        <div className="absolute top-20 left-4 sm:left-10 w-16 h-16 sm:w-20 sm:h-20 bg-white/20 rounded-full blur-xl animate-pulse z-20"></div>
+        <div className="absolute bottom-20 right-4 sm:right-10 w-24 h-24 sm:w-32 sm:h-32 bg-white/10 rounded-full blur-2xl animate-pulse delay-1000 z-20"></div>
       </section>
 
       {/* Features Section */}
