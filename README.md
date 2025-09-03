@@ -4,6 +4,8 @@
 
 Fixtral is an AI-powered Photoshop assistant that automates image edits requested on Reddit's r/PhotoshopRequest using Google's Gemini AI models.
 
+https://github.com/user-attachments/assets/32db6bad-13d9-461d-9158-35c78d1ea89c
+
 ## 🚀 Features
 
 - **Automated Reddit Integration**: Fetches new posts from r/PhotoshopRequest with image attachments
