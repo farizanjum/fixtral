@@ -290,7 +290,7 @@ export default function LandingPage() {
 
           <div className="text-center mt-6 sm:mt-8 pt-6 sm:pt-8 border-t text-sm text-muted-foreground mobile-responsive-text">
             <p>&copy; 2025 Fixtral. Built with Next.js, Tailwind CSS, and Google Gemini AI.</p>
-            <p className="mt-2">Made with ❤️ by Fariz Anjum</p>
+            <p className="mt-2">Made with ❤️ by Shivesh tiwari</p>
           </div>
         </div>
       </footer>
