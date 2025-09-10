@@ -415,7 +415,7 @@ Focus ONLY on technical editing requirements - remove/add objects, color changes
     return new Response(JSON.stringify({
       ok: true,
       changeSummary,
-      timestamp: new Date().toISOString()
+    timestamp: new Date().toISOString()
     }), {
       headers: { 'Content-Type': 'application/json' },
     });

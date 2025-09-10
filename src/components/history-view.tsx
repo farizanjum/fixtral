@@ -62,7 +62,7 @@ export function HistoryView() {
               originalImageUrl: item.original_image_url,
               editedImageUrl: item.edited_image_url,
               postUrl: item.post_url,
-              editForm: {
+      editForm: {
                 task_type: item.edit_form?.task_type || 'other',
                 instructions: item.analysis,
                 method: item.method
